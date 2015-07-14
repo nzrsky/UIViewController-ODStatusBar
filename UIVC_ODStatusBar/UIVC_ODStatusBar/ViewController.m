@@ -14,6 +14,11 @@
 
 @implementation ViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
 - (IBAction)toggleStatusBarVisibility:(id)sender {
     [self od_setStatusBarHidden:![UIApplication sharedApplication].statusBarHidden
                   withAnimation:UIStatusBarAnimationFade];
@@ -23,6 +28,10 @@
     BOOL newStyle = ([UIApplication sharedApplication].statusBarStyle == UIStatusBarStyleDefault) ? UIStatusBarStyleLightContent :
                                                                                                     UIStatusBarStyleDefault;
     [self od_setStatusBarStyle:newStyle animated:YES];
+}
+
+- (IBAction)toggleNavigationBarVisibility:(id)sender {
+    self.navigationController.navigationBarHidden = !self.navigationController.navigationBarHidden;
 }
 
 @end

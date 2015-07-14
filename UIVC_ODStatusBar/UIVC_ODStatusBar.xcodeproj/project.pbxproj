@@ -13,10 +13,10 @@
 		84BE091C1B3D3C250043AE31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE091A1B3D3C250043AE31 /* Main.storyboard */; };
 		84BE091E1B3D3C250043AE31 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BE091D1B3D3C250043AE31 /* Images.xcassets */; };
 		84BE09211B3D3C250043AE31 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE091F1B3D3C250043AE31 /* LaunchScreen.xib */; };
-		84BE09381B3D3F240043AE31 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 84BE09361B3D3F240043AE31 /* LICENSE */; };
 		84BE09391B3D3F240043AE31 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 84BE09371B3D3F240043AE31 /* README.md */; };
 		84BE093D1B3D3F5D0043AE31 /* UIViewController+ODStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE093C1B3D3F5D0043AE31 /* UIViewController+ODStatusBar.m */; };
 		84BE093F1B3D41E70043AE31 /* UIViewController+ODStatusBar.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 84BE093E1B3D41E70043AE31 /* UIViewController+ODStatusBar.podspec */; };
+		84CFEEC21B54CE9000B56760 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84CFEEC11B54CE9000B56760 /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +30,11 @@
 		84BE091B1B3D3C250043AE31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84BE091D1B3D3C250043AE31 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84BE09201B3D3C250043AE31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		84BE09361B3D3F240043AE31 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		84BE09371B3D3F240043AE31 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		84BE093B1B3D3F5D0043AE31 /* UIViewController+ODStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ODStatusBar.h"; sourceTree = "<group>"; };
 		84BE093C1B3D3F5D0043AE31 /* UIViewController+ODStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ODStatusBar.m"; sourceTree = "<group>"; };
 		84BE093E1B3D41E70043AE31 /* UIViewController+ODStatusBar.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "UIViewController+ODStatusBar.podspec"; path = "../UIViewController+ODStatusBar.podspec"; sourceTree = "<group>"; };
+		84CFEEC11B54CE9000B56760 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = ../LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 		84BE09041B3D3C250043AE31 = {
 			isa = PBXGroup;
 			children = (
-				84BE09361B3D3F240043AE31 /* LICENSE */,
+				84CFEEC11B54CE9000B56760 /* LICENSE.txt */,
 				84BE09371B3D3F240043AE31 /* README.md */,
 				84BE093E1B3D41E70043AE31 /* UIViewController+ODStatusBar.podspec */,
 				84BE093A1B3D3F5D0043AE31 /* src */,
@@ -163,7 +163,7 @@
 				84BE091C1B3D3C250043AE31 /* Main.storyboard in Resources */,
 				84BE093F1B3D41E70043AE31 /* UIViewController+ODStatusBar.podspec in Resources */,
 				84BE09211B3D3C250043AE31 /* LaunchScreen.xib in Resources */,
-				84BE09381B3D3F240043AE31 /* LICENSE in Resources */,
+				84CFEEC21B54CE9000B56760 /* LICENSE.txt in Resources */,
 				84BE091E1B3D3C250043AE31 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +326,7 @@
 				84BE09321B3D3C260043AE31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

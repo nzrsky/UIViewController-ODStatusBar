@@ -10,24 +10,34 @@
 
 #define OD_iOS7x (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_7_0)
 
+static NSTimeInterval const ODStatusBarAnimationDuration = 0.2f;
+static NSString *const ODStatusBarStyleLightContent = @"UIStatusBarStyleLightContent";
+static NSString *const ODStatusStyleKey = @"UIStatusBarStyle";
+static NSString *const ODStatusHiddenKey = @"UIStatusBarHidden";
+
 @implementation UIViewController (OD_StatusBar)
 
-static const NSTimeInterval kStatusBarAnimationDuration = 0.2f;
+static BOOL __od_statusBarHidden = NO;
+static UIStatusBarAnimation __od_statusBarUpdateAnimation = YES;
+static UIStatusBarStyle __od_statusBarStyle = UIStatusBarStyleDefault;
 
-static BOOL __statusBarHidden = NO;
-static UIStatusBarAnimation __statusBarUpdateAnimation = YES;
-static UIStatusBarStyle __statusBarStyle = UIStatusBarStyleDefault;
++ (void)load {
+    if (OD_iOS7x) {
+        NSDictionary *infoPlist = [NSBundle mainBundle].infoDictionary;
+        __od_statusBarHidden = [infoPlist[ODStatusHiddenKey] boolValue];
+        __od_statusBarStyle = [infoPlist[ODStatusStyleKey] isEqualToString:ODStatusBarStyleLightContent] ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    }
+}
 
 - (void)od_updateStatusBarAppearanceAnimated:(BOOL)animated {
     if (animated) {
-        [UIView animateWithDuration:kStatusBarAnimationDuration animations:^{
+        [UIView animateWithDuration:ODStatusBarAnimationDuration animations:^{
             [self setNeedsStatusBarAppearanceUpdate];
         }];
     } else  {
         [self setNeedsStatusBarAppearanceUpdate];
     }
 }
-
 
 - (void)od_setStatusBarHidden:(BOOL)hidden {
     [self od_setStatusBarHidden:hidden withAnimation:UIStatusBarAnimationNone];
@@ -36,8 +46,8 @@ static UIStatusBarStyle __statusBarStyle = UIStatusBarStyleDefault;
 - (void)od_setStatusBarHidden:(BOOL)hidden withAnimation:(UIStatusBarAnimation)animation {
     if (OD_iOS7x) {
         @synchronized([UIApplication sharedApplication]) {
-            __statusBarUpdateAnimation = animation;
-            __statusBarHidden = hidden;
+            __od_statusBarUpdateAnimation = animation;
+            __od_statusBarHidden = hidden;
         }
 
         [self od_updateStatusBarAppearanceAnimated:animation != UIStatusBarAnimationNone];
@@ -53,7 +63,7 @@ static UIStatusBarStyle __statusBarStyle = UIStatusBarStyleDefault;
 - (void)od_setStatusBarStyle:(UIStatusBarStyle)style animated:(BOOL)animated {
     if (OD_iOS7x) {
         @synchronized([UIApplication sharedApplication]) {
-            __statusBarStyle = style;
+            __od_statusBarStyle = style;
         }
     
         UINavigationBar *bar = ([self isKindOfClass:UINavigationController.class]) ? ((UINavigationController *) self).navigationBar :
@@ -75,15 +85,15 @@ static UIStatusBarStyle __statusBarStyle = UIStatusBarStyleDefault;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 - (BOOL)prefersStatusBarHidden {
-    return __statusBarHidden;
+    return __od_statusBarHidden;
 }
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return __statusBarUpdateAnimation;
+    return __od_statusBarUpdateAnimation;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return __statusBarStyle;
+    return __od_statusBarStyle;
 }
 #pragma clang diagnostic pop
 

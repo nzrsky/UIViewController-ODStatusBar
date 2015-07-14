@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIViewController+ODStatusBar.h"
 
 @interface AppDelegate ()
 @end
