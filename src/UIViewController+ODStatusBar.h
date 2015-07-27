@@ -19,6 +19,7 @@
 */
 
 @interface UIViewController (OD_StatusBar)
+
 // Hides or shows the status bar, optionally animating the transition.
 - (void)od_setStatusBarHidden:(BOOL)hidden;
 - (void)od_setStatusBarHidden:(BOOL)hidden withAnimation:(UIStatusBarAnimation)animation;
@@ -27,4 +28,6 @@
 - (void)od_setStatusBarStyle:(UIStatusBarStyle)style;
 - (void)od_setStatusBarStyle:(UIStatusBarStyle)style animated:(BOOL)animated;
 
+// Manually update status bar appearance.
+- (void)od_updateStatusBarAppearanceAnimated:(BOOL)animated;
 @end

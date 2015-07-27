@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "UIViewController+ODStatusBar"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "A utility class for managing iOS status bar state."
   s.homepage     = "https://github.com/Rogaven/UIViewController-ODStatusBar"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
