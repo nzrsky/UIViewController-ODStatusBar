@@ -27,7 +27,7 @@ UIViewController-ODStatusBar is available through [CocoaPods](http://cocoapods.o
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "UIViewController-ODStatusBar"
+pod "UIViewController+ODStatusBar"
 ```
 
 ## Author
